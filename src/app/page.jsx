@@ -53,20 +53,19 @@ export default function Home() {
     setCurrentTime(value);
   };
 
-
   return (
     <main className="max-w-[1120px] mx-auto px-4">
       {confetti && <Confetti />}
-      <section className="grid grid-cols-1 lg:grid-cols-2 mt-28">
+      <section className="grid grid-cols-1 lg:grid-cols-2 mt-28 max-[340px]:mt-7">
         <div>
-          <h1 className="text-slate-900 text-5xl text-left sm:text-6xl font-semibold tracking-tight mb-4">
+          <h1 className="text-slate-900 max-[340px]:text-4xl text-5xl text-left sm:text-6xl font-semibold tracking-tight mb-4">
             Happy Birthday, <br></br> to my Aunt Milly!
           </h1>
           <p className="text-slate-700 text-2xl font-medium mb-14 text-left">
             Seeing as I'm (apparently) a web-developer now here's a birthday
             website to celebrate you turning 21 (...again)
           </p>
-          <div className="flex gap-3">
+          <div className="flex flex-col sm:flex-row gap-3">
             <div className="relative w-full">
               {/* audio */}
               <div className="bg-gray-100 border-2 border-gray-200 flex items-center rounded-full p-2 pr-4 gap-4 shadow-1">
@@ -112,7 +111,7 @@ export default function Home() {
             {/* confetti btn */}
             <div>
               <div
-                className="bg-gray-100 border-2 border-gray-200 w-20 h-20 min-w-20 min-h-20 rounded-full flex items-center justify-center cursor-pointer shadow-1"
+                className="bg-gray-100 border-2 border-gray-200 sm:w-20 sm:h-20 sm:min-w-20 mt-3 sm:mt-0 sm:min-h-20 rounded-full flex items-center justify-center cursor-pointer shadow-1"
                 onClick={toggleConfetti}
               >
                 <img src="/party-popper.png" alt="a party popper" />
@@ -149,12 +148,12 @@ export default function Home() {
             <img
               src="/partying-face.png"
               alt=""
-              className="absolute top-10 left-2 sm:top-10 sm:-left-20 w-20"
+              className="absolute top-10 left-2 hidden md:block md:top-10 md:-left-20 md:w-20"
             />
             <img
               src="/fingers.png"
               alt=""
-              className="absolute -bottom-10 right-20"
+              className="absolute hidden md:block md:-bottom-10 md:right-20"
             />
           </div>
         </div>
@@ -168,34 +167,36 @@ export default function Home() {
         <h2 className="text-center text-4xl font-semibold mb-16">
           Loved and adored by...
         </h2>
-        <div className="grid grid-cols-3 gap-12">
-          <div className="aspect-square bg-slate-300 rounded-[56px] relative overflow-hidden -rotate-2 shadow-4">
-            <img
-              src="/marreys.webp"
-              style={{ objectFit: "cover" }}
-            />
+        <div className="grid gird-cols-1 sm:grid-cols-3 gap-12">
+          <div className="flex flex-col gap-6">
+            <div className="aspect-square bg-slate-300 rounded-[56px] relative overflow-hidden -rotate-2 shadow-4">
+              <img src="/marreys.webp" style={{ objectFit: "cover" }} />
+            </div>
+            <p className="text-slate-900 text-xl text-center font-semibold">
+              ...your own lovely family...
+            </p>
           </div>
+          <div className="flex flex-col gap-6">
           <div className="aspect-square bg-slate-300 rounded-[56px] relative overflow-hidden -rotate-2 shadow-4">
-            <img
-              src="/milly-mom.webp"
-              style={{ objectFit: "cover" }}
-            />
+            <img src="/milly-mom.webp" style={{ objectFit: "cover" }} />
           </div>
-          <div className="aspect-square bg-slate-300 rounded-[56px] relative overflow-hidden -rotate-2 shadow-4">
-            <img
-              src="/me-niamh.webp"
-              style={{ objectFit: "cover" }}
-            />
-          </div>
-          <p className="text-slate-900 text-xl text-center font-semibold">
-            ...your own lovely family...
-          </p>
           <p className="text-slate-900 text-xl text-center font-semibold">
             ...your mad sister in law...
           </p>
+          </div>
+          <div className="flex flex-col gap-6">
+          <div className="aspect-square bg-slate-300 rounded-[56px] relative overflow-hidden -rotate-2 shadow-4">
+            <img src="/me-niamh.webp" style={{ objectFit: "cover" }} />
+          </div>
           <p className="text-slate-900 text-xl text-center font-semibold">
             ...and your beautiful niece and your even more beautiful nephew
           </p>
+          </div>
+
+          
+
+          
+          
         </div>
       </section>
 
@@ -205,10 +206,7 @@ export default function Home() {
 
       <section className="flex flex-col items-center">
         <div className="aspect-square max-w-80 bg-slate-300 rounded-[56px] relative overflow-hidden -rotate-1 mb-16 shadow-4">
-          <img
-            src="/milly-clown.webp"
-            style={{ objectFit: "cover" }}
-          />
+          <img src="/milly-clown.webp" style={{ objectFit: "cover" }} />
         </div>
         <svg
           width="106"
@@ -225,14 +223,16 @@ export default function Home() {
         </svg>
 
         <h2 className="text-center text-4xl font-semibold mb-16">
-          see you soon
+          see you soon,<br></br> Pearse :)
         </h2>
       </section>
 
-      <footer className="flex items-center justify-center gap-4 my-28">
+      <footer className="flex max-[340px]:flex-col items-center justify-center gap-4 my-28">
         <img src="/monkey.png" alt="a wee squiggle" />
-        <p className="text-slate-700 font-medium">I hope this bloody thing works</p>
-        </footer>
+        <p className="text-slate-700 font-medium">
+          I hope this bloody thing works
+        </p>
+      </footer>
     </main>
   );
 }
